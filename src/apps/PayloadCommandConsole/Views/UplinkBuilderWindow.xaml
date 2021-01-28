@@ -1,0 +1,165 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:PayloadCommandConsole.ViewModels;assembly=PayloadCommandConsole"
+        x:Class="Hypergiant.HIVE.Views.UplinkBuilderWindow"
+        Background="#1C2636"
+        Height="600"
+        Width="800"
+        Title="PCC Uplink Editor">
+  <Design.DataContext>
+    <vm:UplinkBuilderViewModel/>
+  </Design.DataContext>
+  
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <TextBlock
+      Grid.Row="0"
+      Grid.Column="0"
+      Grid.ColumnSpan="3"
+      Classes="Static"
+      FontSize="24"
+      HorizontalAlignment="Center"
+      Text="Uplink Command Builder"/>
+    <Grid
+      Grid.Row="1"
+      Grid.Column="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <TextBlock
+        Grid.Row="0"
+        Classes="Static"
+        FontSize="16"
+        Margin="5"
+        Text="Destination Folder" />
+      <TextBox
+        Grid.Row="1"
+        Background="#010A19"
+        Foreground="White"
+        FontSize="14"
+        FontFamily="Courier New"
+        Margin="5"
+        Text="{Binding CurrentCommand.DestinationFolder}"
+        Watermark="[Enter A Path]" />
+      <TextBlock
+        Grid.Row="2"
+        Classes="Static"
+        FontSize="16"
+        Margin="5"
+        Text="Destination Entity ID" />
+      <TextBox
+        Grid.Row="3"
+        Background="#010A19"
+        Foreground="White"
+        FontSize="14"
+        FontFamily="Courier New"
+        Margin="5"
+        Text="{Binding CurrentCommand.RemoteEntityID}"
+        Watermark="[Enter An ID]" />      
+      <TextBlock
+        Grid.Row="4"
+        Classes="Static"
+        FontSize="16"
+        Margin="5"
+        Text="File(s)" />
+      <ListBox
+        Grid.Row="5"          
+        Margin="5"
+        Background="Transparent"
+        Items="{Binding CurrentCommand.Files}"          
+        DockPanel.Dock="Top">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <DockPanel>
+              <TextBlock
+                Classes="Static"
+                FontSize="14"
+                DockPanel.Dock="Left"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Width="100"
+                Text="{Binding Name}" />
+              <Button
+                DockPanel.Dock="Right"
+                Classes="Rounded"
+                Content="Remove"
+                Command="{Binding RemoveCommand}">
+                <Image Width="20" Source="/Assets/delete_50px.png" />
+              </Button>
+              <Button
+                DockPanel.Dock="Right"
+                Classes="Rounded"
+                Command="{Binding RenameCommand}">
+                <Image Width="20" Source="/Assets/rename_50px.png" />
+              </Button>
+            </DockPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <Button
+        Grid.Row="6"
+        Content="Add"
+        Classes="Rounded"
+        Width="75"
+        HotKey="40"
+        HorizontalAlignment="Right"
+        Margin="5"
+        Command="{Binding AddFileCommand}" />
+    </Grid>
+    <DockPanel
+      Grid.Row="1"
+      Grid.Column="1">
+      <TextBlock
+        Text="Command"
+        FontSize="16"
+        Classes="Static"
+        Margin="5"
+        DockPanel.Dock="Top" />
+      <TextBox
+        DockPanel.Dock="Bottom"
+        IsReadOnly="True"
+        Background="#010A19"
+        Foreground="White"
+        AcceptsReturn="True"
+        FontSize="14"
+        FontFamily="Courier New"
+        Margin="5"
+        Text="{Binding CurrentCommand.CommandText, Mode=OneWay}" />        
+    </DockPanel>
+    <DockPanel
+      VerticalAlignment="Center"
+      Grid.Row="1"
+      Grid.Column="2">
+      <Button
+        Classes="Rounded"
+        DockPanel.Dock="Top"
+        Height="30"
+        Width="60"
+        Command="{Binding BuildCommand}"
+        Content="OK" />
+      <Button
+        Classes="Rounded"
+        DockPanel.Dock="Top"
+        Height="30"
+        Width="60"
+        Command="{Binding CancelCommand}"
+        Content="Cancel" />
+    </DockPanel>
+  </Grid>
+</Window>

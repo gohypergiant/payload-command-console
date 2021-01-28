@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "a1b50c95-0377-4947-87a6-17ca3d71efd0",
+		"name": "TReK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CFDP",
+			"item": [
+				{
+					"name": "Put File",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"localFile\":\"c:\\\\temp\\\\trek\\\\bricks.jpg\",\n\t\"remoteFile\":\"c:\\\\temp\\\\trek\\\\bricks2.jpg\",\n\t\"remoteEntityID\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/cfdp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cfdp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get File",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"localFile\":\"c:\\\\temp\\\\trek\\\\bricks2.jpg\",\n\t\"remoteFile\":\"c:\\\\temp\\\\trek\\\\bricks.jpg\",\n\t\"remoteEntityID\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/cfdp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cfdp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Files In Directory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"localFile\":\"c:\\\\temp\\\\trek\\\\dst\\\\\",\n\t\"remoteFile\":\"c:\\\\temp\\\\trek\\\\\",\n\t\"remoteEntityID\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/cfdp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cfdp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete File",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"remoteFile\":\"c:\\\\temp\\\\trek\\\\bricks2.jpg\",\n\t\"remoteEntityID\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/cfdp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cfdp"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

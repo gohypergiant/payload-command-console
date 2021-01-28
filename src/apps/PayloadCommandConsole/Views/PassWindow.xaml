@@ -1,0 +1,88 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Background="#1C2636"
+        Width="400"
+        Height="500"
+        x:Class="PayloadCommandConsole.Views.PassWindow"
+        Title="Passes">
+  <Grid Grid.Column="2" Background="#1C2636">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <DockPanel Grid.Row="0">
+      <TextBlock
+        DockPanel.Dock="Left"
+        Text="Passes"
+        Foreground="#00E1FF"
+        Classes="Static"
+        FontSize="24"
+        Margin="12" />
+    </DockPanel>
+
+    <ListBox
+      x:Name="passList"
+      Grid.Row="1"
+      Padding="0" BorderThickness="0"
+      SelectedItem="{Binding SelectedPass, Mode=OneWayToSource}"
+      Items="{Binding Passes, Mode=OneWay}"      
+      Background="Transparent">
+
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Grid>
+            <StackPanel Margin="10">
+              <TextBlock
+                Text="{Binding StationName}"
+                Classes="Static"
+                FontSize="20" />
+              <StackPanel Orientation="Horizontal" Margin="0 5">
+                <TextBlock
+                  Text="AOS: "
+                  Classes="Static"
+                  FontSize="16" />
+                <TextBlock
+                  Text="{Binding ScheduledAos, StringFormat='{}{0:MM/dd/yy HH:mm:ss}  UTC'}"
+                  FontSize="16"
+                  Classes="Dynamic" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                  <TextBlock
+                    Text="LOS: "
+                    Classes="Static"
+                    FontSize="16" />
+                  <TextBlock
+                    Text="{Binding ScheduledLos, StringFormat='{}{0:MM/dd/yy HH:mm:ss}  UTC'}"
+                    FontSize="16"
+                    Classes="Dynamic" />
+                </StackPanel>
+            </StackPanel>
+          </Grid>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    
+    <StackPanel Grid.Row="2" Orientation="Horizontal">
+      <Button
+        Command="{Binding SelectCommand}"
+        HorizontalAlignment="Stretch"
+        Height="30"
+        Width="70"
+        Content="Select"
+        Classes="Rounded">
+      </Button>
+      <Button
+        Command="{Binding CancelCommand}"
+        HorizontalAlignment="Stretch"
+        Height="30"
+        Width="70"
+        Content="Cancel"
+        Classes="Rounded">
+      </Button>
+    </StackPanel>
+  </Grid>
+</Window>

@@ -1,0 +1,72 @@
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PayloadCommandConsole"
+             x:Class="PayloadCommandConsole.App">
+  <Application.DataTemplates>
+    <local:ViewLocator/>
+  </Application.DataTemplates>
+
+  <Application.Styles>
+    <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+    <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
+
+    <Style Selector="Button.Rounded /template/ ContentPresenter">
+      <Setter Property="CornerRadius" Value="4" />
+    </Style>
+    <Style Selector="Button.Rounded">
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Margin" Value="4" />      
+      <Setter Property="Background" Value="#00E1FF" />
+      <Setter Property="Foreground" Value="#1C2636" />
+      <Setter Property="FontFamily" Value="resm:PayloadCommandConsole.Assets.Barlow-Regular.ttf?assembly=PayloadCommandConsole#Barlow" />
+    </Style>
+    <Style Selector="TextBlock.Static">
+      <Setter Property="Foreground" Value="#00E1FF" />
+      <Setter Property="FontFamily" Value="resm:PayloadCommandConsole.Assets.Barlow-Regular.ttf?assembly=PayloadCommandConsole#Barlow" />
+    </Style>
+    <Style Selector="TextBlock.Dynamic">
+      <Setter Property="Foreground" Value="#EEEEEE" />
+      <Setter Property="FontFamily" Value="resm:PayloadCommandConsole.Assets.Barlow-Regular.ttf?assembly=PayloadCommandConsole#Barlow" />
+    </Style>
+    
+    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="#133662"/>
+    </Style>
+    
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="#007282"/>
+    </Style>
+
+
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="#007282"/>
+    </Style>
+
+    <Style Selector="ComboBoxItem:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="#133662"/>
+    </Style>
+
+    <!--
+    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeControlHighlightMidBrush}"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush4}"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:selected:focus /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:selected:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:selected:focus:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush2}"/>
+    </Style>
+    -->
+    </Application.Styles>
+    
+</Application>

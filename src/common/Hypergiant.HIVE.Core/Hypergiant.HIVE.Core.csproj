@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Hypergiant.HIVE.Core</PackageId>
+    <Version>0.9.0</Version>
+    <Authors>Hypergiant</Authors>
+    <Company>Hypergiant</Company>
+    <PackageDescription>Core library used across all of Hypergiant HIVE</PackageDescription>
+    <RepositoryUrl>https://github.com/gohypergiant/ground-station-common</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="4.7.1" />
+  </ItemGroup>
+
+</Project>
