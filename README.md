@@ -29,20 +29,33 @@ The purpose of Proxy Store Service is to provide a persistent store for commands
 
 ### REST API
 
-| Path | Verb | Description
-|---|---|
-| /api/v1/commands?passid={pass_id} | GET | Gets all Commands from the Store associated with a Pass |
-| /api/v1/commands | POST | Inserts a Command into the Store |
-| /api/v1/commands/{command_id}/history | POST | Inserts a History record for a Command into the Store |
-| /api/v1/commands/{command_id}/history | GET | Retrieves all History records for a Command from the Store |
-| /api/v1/groundstations | GET | Gets all Ground Stations from the Store |
-| /api/v1/passes | GET | Gets all Passes from the Store |
-| /api/v1/passes/{pass_id} | GET | Gets the specified Pass from the Store |
-| /api/v1/passes/{pass_id} | PUT | Updates the specified Pass in the Store |
-| /api/v1/passes | POST | Inserts a new Pass into the Store |
-| /api/v1/history/passes/{pass_id} | GET  | Gets all history for the specified Pass |
-| /api/v1/history/passes | POST  | Inserts a PassHistory record into the Store |
+```
+GET  /api/v1/commands?passid={pass_id} 
+    Gets all Commands from the Store associated with a Pass
+POST /api/v1/commands
+    Inserts a Command into the Store
+POST /api/v1/commands/{command_id}/history
+    Inserts a History record for a Command into the Store
+GET  /api/v1/commands/{command_id}/history
+    Retrieves all History records for a Command from the Store
 
+GET  /api/v1/groundstations 
+    Gets all Ground Stations from the Store
+
+GET  /api/v1/passes
+    Gets all Passes from the Store
+GET  /api/v1/passes/{pass_id}
+    Gets the specified Pass from the Store
+PUT  /api/v1/passes/{pass_id}
+    Updates the specified Pass in the Store
+POST /api/v1/passes
+    Inserts a new Pass into the Store
+
+GET  /api/v1/history/passes/{pass_id}
+    Gets all history for the specified Pass
+POST /api/v1/history/passes
+    Inserts a PassHistory record into the Store
+```
 
 ## ExecutiveService
 
@@ -50,10 +63,13 @@ The purpose of the Executive Service is to provide an implementation for how Com
 
 ### REST API
 
-| Path | Verb | Description
-|---|---|
-| /api/v1/configuration | GET | Gets the current Executive configuration |
-| /api/v1/configuration | PUT | Updates the current Executive configuration |
-| /api/v1/commands | POST | Sends a Command to the Executive for execution or delivery |
+```
+GET  /api/v1/configuration
+    Gets the current Executive configuration
+PUT  /api/v1/configuration 
+    Updates the current Executive configuration
 
+POST /api/v1/commands
+    Sends a Command to the Executive for execution or delivery
+```
 
