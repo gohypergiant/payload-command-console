@@ -1,0 +1,53 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:PayloadCommandConsole.ViewModels;assembly=PayloadCommandConsole"
+        SizeToContent="WidthAndHeight"
+        Background="#1C2636"
+        x:Class="Hypergiant.HIVE.Views.InputBox"
+        >
+  <Design.DataContext>
+    <vm:InputBoxViewModel/>
+  </Design.DataContext>
+  
+  <DockPanel>
+    <TextBlock     
+      Margin="10"
+      Classes="Static"
+      FontSize="18"
+      DockPanel.Dock="Top"
+      Text="{Binding Caption}" />
+    <TextBox
+      CaretBrush="White"
+      Margin="10"
+      Padding="5"
+      Classes="Static"
+      FontFamily="Courier New"
+      FontSize="16"
+      Background="Black"
+      Foreground="White"
+      DockPanel.Dock="Top"
+      Text="{Binding Input}">
+    </TextBox>
+    <DockPanel
+      DockPanel.Dock="Bottom"
+      Margin="10"
+      >
+      <Button
+        Width="80"
+        Classes="Rounded"
+        DockPanel.Dock="Left"
+        Command="{Binding Button1Command}"
+        Content="OK" />
+      <Button
+        Width="80"
+        Classes="Rounded"
+        DockPanel.Dock="Right"
+        Command="{Binding Button2Command}"
+        Content="Cancel" />
+    </DockPanel>
+      
+    
+  </DockPanel>
+</Window>

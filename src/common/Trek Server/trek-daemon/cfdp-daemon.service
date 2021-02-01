@@ -1,0 +1,12 @@
+[Unit]
+Description=Hypergiant CFDP Service
+
+[Service]
+ExecStart=trek-daemon
+WorkingDirectory=/home/pi/projects/trek-daemon/bin/ARM/Debug 
+SyslogIdentifier=cfdp
+StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target
+Alias=cfdp.service

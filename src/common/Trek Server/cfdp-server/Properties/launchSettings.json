@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "cfdp-server": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

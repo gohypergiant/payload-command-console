@@ -1,0 +1,12 @@
+﻿{
+	"commandType":"HGS",
+	"Name":"ping",
+	"commandVersion":1,
+	"executeLocation":"ground",
+	"executionData": {
+		"command":"ping",
+		"address":"192.168.10.70",
+		"count":2,
+		"timeout":3000
+	}
+}

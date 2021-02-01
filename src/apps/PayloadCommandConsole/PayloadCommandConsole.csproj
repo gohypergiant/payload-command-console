@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon>Assets\hg_logo_blue.ico</ApplicationIcon>
+    <RootNamespace>Hypergiant.HIVE</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Publish</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\delete_50px.png" />
+    <None Remove="Assets\tools_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.9.10" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.9.10" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.10" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10" />
+    <PackageReference Include="MessageBox.Avalonia" Version="0.9.6.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\add_50px.png" />
+    <EmbeddedResource Include="Assets\Barlow-Regular.ttf" />
+    <EmbeddedResource Include="Assets\delete_50px.png" />
+    <EmbeddedResource Include="Assets\pencil_50px.png" />
+    <EmbeddedResource Include="Assets\hg_logo_blue.ico" />
+    <EmbeddedResource Include="Assets\chevron_50px.png" />
+    <EmbeddedResource Include="Assets\database_50px.png" />
+    <EmbeddedResource Include="Assets\rename_50px.png" />
+    <EmbeddedResource Include="Assets\settings_50px.png" />
+    <EmbeddedResource Include="Assets\open_50px.png" />
+    <EmbeddedResource Include="Assets\refresh_50px.png" />
+    <EmbeddedResource Include="Assets\satellite_50px.png" />
+    <EmbeddedResource Include="Assets\tools_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\InputBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PassWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UplinkBuilderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\Hypergiant.HIVE.Core\Hypergiant.HIVE.Core.csproj" />
+    <ProjectReference Include="..\..\common\Hypergiant.HIVE.Proxy\Hypergiant.HIVE.Proxy.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\InputBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\UplinkBuilderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

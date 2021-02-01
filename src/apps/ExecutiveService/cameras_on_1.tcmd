@@ -1,0 +1,6 @@
+{
+	"Command":"execute",
+	"StartTime":"2020-01-16T10:00Z",
+	"File":"python3",
+	"Arguments":"/home/hyper/script/widar_gpio.py -g 5 -s 0"
+}

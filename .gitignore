@@ -1,0 +1,10 @@
+.vs/
+bin/
+obj/
+src/apps/ExecutiveService/pub/
+*.user
+src/apps/Publish/
+[Dd]ebug/
+[Rr]elease/
+
+*.vcxproj.filters

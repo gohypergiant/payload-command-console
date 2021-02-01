@@ -1,0 +1,64 @@
+CFDP_configuration_version 3
+
+# ******************** TReK CFDP library configuration ********************
+
+# A unique reference that may be used to communicate with other TReK library devices. 
+cfdp_library_device_name "cfdp_device6"
+
+# Set to NATIVE_CFDP or ION_CFDP
+trek_device_mode NATIVE_CFDP 
+
+# Record messages in a log file.
+log_messages_in_file false
+log_debug_messages false
+log_file_path 
+log_file_name toolkit_cfdp_log.txt
+
+# Record statistic snapshot in a file.
+record_stat_snapshot_in_file false
+record_packet_statistics false
+record_stat_file_path 
+record_stat_file_name cfdp_put_example_1_statistics.csv
+
+# Record CFDP metrics snapshot in a file.
+record_cfdp_metrics_snapshot_in_file false
+record_cfdp_metrics_file_path 
+record_cfdp_metrics_file_name cfdp_put_example_1_metrics.csv
+
+# Support programmatic CFDP status requests.
+support_cfdp_status_requests true
+
+# Use a "dropbox" primitive as described in the TReK CFDP user guides and TReK CFDP
+# on-line help to configure a TReK CFDP dropbox.
+# dropbox <class1,class2,////> <"dropbox_path"> <dest-eid> <"dest_path"> <retry_limit> <"successful_trans_path">
+
+# Primitives.
+
+# ******************** Native CFDP configuration ********************
+
+ack_timeout 5
+ack_limit 5
+nak_timeout 5
+nak_limit 5
+inactivity_timeout 300
+outgoing_file_chunk_size 16000
+aggregate_file_transfer_bit_rate 10000000
+socket_queue_size 1000
+transaction_cycle_time_interval 1
+steps_per_transaction_cycle 10
+
+# Set to class1 or class2.
+class_of_service class2
+
+# Activate automatic suspend and resume of CFDP transactions enabling native CFDP support across AOS/LOS windows.
+auto_suspend_and_resume false
+# Set to PEER_TO_PEER_MODE, CLIENT_OR_GROUND_MODE or SERVER_OR_FLIGHT_MODE.
+auto_suspend_and_resume_mode PEER_TO_PEER_MODE
+auto_suspend_and_resume_port 45600
+auto_suspend_and_resume_connection_timeout 5
+
+# Local entity ID node.
+local_entity_id 103 local_ip_address 192.168.10.243 local_port 4561
+
+# Remote entity ID nodes.
+remote_entity_id 1 remote_ip_address 192.168.10.243 remote_port 4560
